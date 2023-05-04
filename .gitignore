@@ -13,7 +13,7 @@ yarn-error.log
 *.bak
 
 # Build and distribution related
-dist/
+#dist/
 build/
 *.zip
 *.crx
