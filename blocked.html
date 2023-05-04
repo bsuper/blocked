@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="dist/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+  <title>Blocked</title>
+  <style>
+    #bg-image {
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: -1;
+    }
+
+    #blocked-text {
+      font-family: 'Permanent Marker', cursive;
+    }
+  </style>
+</head>
+<body class="relative min-h-screen">
+  <div id="bg-image" class=""></div>
+  <div class="text-center absolute inset-0 flex flex-col justify-center items-center px-4">
+    <h1 id="blocked-text" class="text-6xl font-bold text-white leading-tight tracking-wide"></h1>
+  </div>
+  <script>
+    const images = [
+      'images/1.png',
+      'images/2.png',
+      'images/3.png',
+      'images/4.png',
+    ];
+
+    const texts = [
+      "Get back to work, you future success story!",
+      "Remember, Rome wasn't built in a day... but they were working on it!",
+      "Hey, your dreams called. They said to get back to work!",
+      "Stop scrolling, start doing! Your future self will thank you.",
+      "As the great Procrastinator once said: 'Why do today what you can... Oh, never mind, just get back to work!'",
+      "Hard work pays off, but procrastination pays off now. Wait, no, that's not right...",
+      "If you think you can't, you're right! Now go prove yourself wrong.",
+      "Don't watch the clock, do what it does. Keep going!",
+      "In the battle of work vs. procrastination, may the force be with you!",
+      "You are not being productive, get back to work!",
+    ];
+
+    function getRandomItem(arr) {
+      const index = Math.floor(Math.random() * arr.length);
+      return arr[index];
+    }
+
+    const selectedImage = getRandomItem(images);
+    document.getElementById('bg-image').style.backgroundImage = `url(${selectedImage})`;
+    document.getElementById('blocked-text').textContent = getRandomItem(texts);
+  </script>
+</body>
+</html>
